@@ -20,11 +20,11 @@ my $builder = Module::Build->new(
     },
     build_requires => {
         'Config'            => 0,
-        'Test::Builder'     => 0,
+        'Test::Builder'     => 0.94,
         'Test::Cmd'         => 0,
         'Test::Differences' => 0,
         'Test::Exception'   => 0,
-        'Test::More'        => 0,
+        'Test::More'        => 0.94,
     },
     create_makefile_pl => 'traditional',
 );

@@ -2,7 +2,7 @@ package Test::ParallelSubtest::Capture;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 {
     package Test::ParallelSubtest::CaptureFH;
@@ -151,8 +151,7 @@ holding the same the sequence of writes.
 
 Replays the captured sequence of writes.  The parameters must be file
 handles, and each will receive writes of a particular type.  See
-L<Test::Builder/output>, L<Test::Builder/failure_output> and
-L<Test::Builder/todo_output>.
+L<Test::Builder/output>.
 
 Returns true on success, false if the internal buffer cannot be decoded
 because a malformed buffer was passed to new().

@@ -2,11 +2,9 @@ Build.PL
 Changes
 lib/Test/ParallelSubtest.pm
 lib/Test/ParallelSubtest/Capture.pm
-Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP
 README
-t.pl
 t/basic.t
 t/bg_subtest_wait.t
 t/child-limits.t
@@ -30,4 +28,5 @@ xt/minimumversion.t
 xt/nobadtext.t
 xt/pod-coverage.t
 xt/pod.t
+Makefile.PL
 META.yml

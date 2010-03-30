@@ -1,5 +1,8 @@
 Revision history for Test::ParallelSubtest
 
+0.02    2010-03-30
+        Fix incorrect Test::Builder version dep in Makefile.PL
+
 0.01    2010-03-22
         Initial release.
 
