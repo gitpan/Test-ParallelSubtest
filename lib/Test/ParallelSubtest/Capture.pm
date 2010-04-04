@@ -2,7 +2,7 @@ package Test::ParallelSubtest::Capture;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 {
     package Test::ParallelSubtest::CaptureFH;

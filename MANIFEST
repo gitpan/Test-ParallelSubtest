@@ -3,7 +3,6 @@ Changes
 lib/Test/ParallelSubtest.pm
 lib/Test/ParallelSubtest/Capture.pm
 MANIFEST			This list of files
-MANIFEST.SKIP
 README
 t/basic.t
 t/bg_subtest_wait.t

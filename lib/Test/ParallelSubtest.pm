@@ -2,7 +2,7 @@ package Test::ParallelSubtest;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Test::Builder::Module;
 our @ISA    = qw(Test::Builder::Module);
@@ -218,7 +218,7 @@ END
         return;
     }
 
-    if (defined $todo and $Test::Builder::VERSION gt "0.95") {
+    if (defined $todo and $Test::Builder::VERSION >= 0.95_02) {
         # Recent Test::Builder redirects the fail output to the todo
         # output for a todo subtest.
         $fail_dest = $todo_dest;
