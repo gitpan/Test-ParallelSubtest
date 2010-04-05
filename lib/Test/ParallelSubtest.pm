@@ -2,7 +2,7 @@ package Test::ParallelSubtest;
 use strict;
 use warnings;
 
-our $VERSION = '0.03';
+our $VERSION = '0.03_01';
 
 use Test::Builder::Module;
 our @ISA    = qw(Test::Builder::Module);
@@ -14,7 +14,6 @@ our $_i_am_a_child = 0;
 our $MaxParallel = 4;
 
 use Carp;
-use POSIX ();
 use Sub::Prepend ();
 use TAP::Parser;
 use Test::Builder;
@@ -151,7 +150,10 @@ sub _child {
     );
 
     close $write_pipe;
-    POSIX::_exit(0);
+
+    no warnings 'redefine';
+    *Test::Builder::DESTROY = sub {};
+    exit(0);
 }
 
 sub bg_subtest_wait {
