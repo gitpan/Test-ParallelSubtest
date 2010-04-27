@@ -2,7 +2,8 @@ package Test::ParallelSubtest;
 use strict;
 use warnings;
 
-our $VERSION = '0.03_01';
+our $VERSION = '0.04';
+$VERSION = eval $VERSION;
 
 use Test::Builder::Module;
 our @ISA    = qw(Test::Builder::Module);
@@ -152,7 +153,7 @@ sub _child {
     close $write_pipe;
 
     no warnings 'redefine';
-    *Test::Builder::DESTROY = sub {};
+    *Test::Builder::DESTROY = sub {}; # For T::B fork in subtest bug
     exit(0);
 }
 

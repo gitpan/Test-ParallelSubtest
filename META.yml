@@ -20,10 +20,10 @@ name: Test-ParallelSubtest
 provides:
   Test::ParallelSubtest:
     file: lib/Test/ParallelSubtest.pm
-    version: 0.03_01
+    version: 0.04
   Test::ParallelSubtest::Capture:
     file: lib/Test/ParallelSubtest/Capture.pm
-    version: 0.03_01
+    version: 0.04
   Test::ParallelSubtest::CaptureFH:
     file: lib/Test/ParallelSubtest/Capture.pm
 requires:
@@ -37,4 +37,4 @@ requires:
   perl: 5.006001
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.03_01
+version: 0.04

@@ -3,6 +3,6 @@
 use strict;
 use warnings;
 
-use Test::Pod::Coverage tests=>1;
-pod_coverage_ok( "Test::ParallelSubtest");
+use Test::Pod::Coverage;
+all_pod_coverage_ok( { trustme => [qr/^import_extra$/] } );
 

@@ -1,5 +1,9 @@
 Revision history for Test::ParallelSubtest
 
+0.04    2010-04-27
+        Avoid POSIX::_exit(), since it exits the entire process not just
+            one pseudo-process under win32 fork emulation.
+
 0.03    2010-04-04
         Fix incorrect operation under Test-Simple 0.95_01
 
