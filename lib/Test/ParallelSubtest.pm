@@ -2,7 +2,7 @@ package Test::ParallelSubtest;
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 $VERSION = eval $VERSION;
 
 use Test::Builder::Module;
@@ -282,6 +282,9 @@ sub _ok_without_diag_output {
 sub _parse_outer_output_line {
     my $output = shift;
 
+    while ($output =~ s/^(\s*#\s*.*\n)//) {
+        _print_to(Test::Builder->new->output, $1);
+    }
     $output =~ s/^\s*//; # it may have been generated within a subtest
 
     my $parser = TAP::Parser->new( { tap => $output } ) or return;
@@ -323,6 +326,16 @@ sub _len_prefixed_reads {
     }
 
     return @results;
+}
+
+sub _print_to {
+    my ($dest, $msg) = @_;
+
+    if (ref $dest =~ /^SCALAR/) {
+        $$dest .= $msg;
+    } else {
+        print {$dest} $msg;
+    }
 }
 
 1;
